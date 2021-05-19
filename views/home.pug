@@ -1,0 +1,13 @@
+extends layout
+
+
+block content
+    .home 
+        include components/navbar
+        .hero 
+            h1.heading!= 'The <span>Node</span> Application for the best <span>News</span>'
+            .cta 
+                a.explore(href="/news") Explore News
+            img.bgImage(src="/newspaper.svg", alt="newspaper")
+
+

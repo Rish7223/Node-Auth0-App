@@ -1,0 +1,7 @@
+.navbar 
+    .logo Node0Auth 
+    .nav-links
+        p(class=isAuthenticated ? "user" : "") #{user && user.nickname}
+        a.home(href="/") Home 
+        a.login(href=isAuthenticated ? "/logout" : '/login') #{isAuthenticated ? 'Logout' : 'Login' }
+        
