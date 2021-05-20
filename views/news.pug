@@ -1,0 +1,13 @@
+extends layout 
+
+block content 
+    include components/navbar
+    .newsList 
+        each news in news_list
+            .singleNews 
+                img(src= news.urlToImage, alt="news preview")
+                .content 
+                    h4.source #{news.source.name} 
+                    h1.title #{news.title} 
+                    a.visit(href= news.url target="#" alt="read news") Read News
+        img.bgImage(src="/newspaper.svg", alt="newspaper")

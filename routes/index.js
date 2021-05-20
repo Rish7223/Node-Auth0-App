@@ -32,12 +32,18 @@ Router.get('/news', requiresAuth(), async (req, res) => {
 Router.get('/news/:category', requiresAuth(), async (req, res) => {
   try {
     const id = req.params.category;
-    const response = await newsapi.v2.sources({
+    const response = await newsapi.v2.topHeadlines({
+      q: id,
       category: id,
       language: 'en',
       country: 'us',
     });
-    res.status(200).send(JSON.stringify(response));
+
+    res.status(200).render('news', {
+      isAuthenticated: true,
+      user: req.oidc.user,
+      news_list: response.articles,
+    });
   } catch (error) {
     if (error) {
       console.log(error);
