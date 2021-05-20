@@ -6,4 +6,4 @@ A node server app build to learn and implement auth0 authentication 🐱‍👤.
 
 ![image](./githubImages/home.PNG)
 ![image](./githubImages/news.PNG)
-![image](./githubImages/newsList.PNG)
+![image](./githubImages/nesList.PNG)
